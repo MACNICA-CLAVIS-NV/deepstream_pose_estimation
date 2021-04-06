@@ -3,16 +3,17 @@
 
 #include "pair_graph.hpp"
 #include "cover_table.hpp"
-#include "munkres_algorithm.cpp"
+//#include "munkres_algorithm.cpp"
+#include "munkres_algorithm.hpp"
 
 #include <gst/gst.h>
 #include <glib.h>
 #include <stdio.h>
 
-#include "gstnvdsmeta.h"
-#include "gstnvdsinfer.h"
-#include "nvdsgstutils.h"
-#include "nvbufsurface.h"
+//#include "gstnvdsmeta.h"
+//#include "gstnvdsinfer.h"
+//#include "nvdsgstutils.h"
+//#include "nvbufsurface.h"
 
 #include <stdio.h>
 #include <vector>
@@ -20,6 +21,7 @@
 #include <queue>
 #include <cmath>
 
+/*
 #define EPS 1e-6
 
 template <class T>
@@ -28,9 +30,12 @@ template <class T>
 using Vec2D = std::vector<Vec1D<T>>;
 template <class T>
 using Vec3D = std::vector<Vec2D<T>>;
+*/
+#include "post_process.hpp"
 
 static const int M = 2;
 
+/*
 static Vec2D<int> topology{
     {0, 1, 15, 13},
     {2, 3, 13, 11},
@@ -53,6 +58,7 @@ static Vec2D<int> topology{
     {36, 37, 17, 6},
     {38, 39, 17, 11},
     {40, 41, 17, 12}};
+*/
 
 /* Method to find peaks in the output tensor. 'window_size' represents how many pixels we are considering at once to find a maximum value, or a ‘peak’. 
    Once we find a peak, we mark it using the ‘is_peak’ boolean in the inner loop and assign this maximum value to the center pixel of our window. 

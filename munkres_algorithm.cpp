@@ -7,12 +7,15 @@
 #include <queue>
 #include <cmath>
 
+/*
 template <class T>
 using Vec1D = std::vector<T>;
 template <class T>
 using Vec2D = std::vector<Vec1D<T>>;
 template <class T>
 using Vec3D = std::vector<Vec2D<T>>;
+*/
+#include "munkres_algorithm.hpp"
 
 // Helper method to subtract the minimum row from cost_graph
 void subtract_minimum_row(Vec2D<float> &cost_graph, int nrows, int ncols)
