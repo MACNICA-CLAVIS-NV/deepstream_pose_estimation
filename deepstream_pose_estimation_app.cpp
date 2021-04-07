@@ -695,8 +695,8 @@ int main(int argc, char *argv[])
   g_print("Now playing...\n");
   gst_element_set_state(pipeline, GST_STATE_PLAYING);
 
-  GST_DEBUG_BIN_TO_DOT_FILE(GST_BIN(pipeline),
-    GST_DEBUG_GRAPH_SHOW_ALL, "pipeline_graph");
+  /* Generate dot graph describes the pipeline structure */
+  //GST_DEBUG_BIN_TO_DOT_FILE(GST_BIN(pipeline), GST_DEBUG_GRAPH_SHOW_ALL, "pipeline");
 
   /* Wait till pipeline encounters an error or EOS */
   g_print("Running...\n");
