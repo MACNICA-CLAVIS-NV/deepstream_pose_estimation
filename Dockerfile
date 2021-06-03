@@ -26,4 +26,6 @@ WORKDIR /${REPOSITORY_NAME}
 
 RUN make
 
-#CMD ./deepstream-pose-estimation-app /dev/video0
+RUN /usr/src/tensorrt/bin/trtexec --onnx=pose_estimation.onnx --saveEngine=pose_estimation.onnx_b1_gpu0_fp16.engine
+
+CMD ./deepstream-pose-estimation-app /dev/video0
