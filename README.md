@@ -31,7 +31,7 @@ You will need
 ### Using Docker (Jetson Only)
 
 1. **Set the default docker runtime** <br>
-  Add "default-runtime": "nvidia" to your /etc/docker/daemon.json configuration file to run the process of the ONNX to TensorRT model conversion in the image build.
+  Add **"default-runtime": "nvidia"** to your **/etc/docker/daemon.json** configuration file to run the process of the ONNX to TensorRT model conversion in the image build.
   ~~~
   {
       "runtimes": {
@@ -76,9 +76,9 @@ You will need
 To get started, please follow these steps.
 1. Install [DeepStream](https://developer.nvidia.com/deepstream-sdk) on your platform, verify it is working by running deepstream-app.
 2. Clone the repository in your directory.
-2. Download the TRTPose [model](https://github.com/NVIDIA-AI-IOT/trt_pose), convert it to ONNX using this [export utility](https://github.com/NVIDIA-AI-IOT/trt_pose/blob/master/trt_pose/utils/export_for_isaac.py), and set its location in the DeepStream configuration file.  
+3. Download the TRTPose [model](https://github.com/NVIDIA-AI-IOT/trt_pose), convert it to ONNX using this [export utility](https://github.com/NVIDIA-AI-IOT/trt_pose/blob/master/trt_pose/utils/export_for_isaac.py), and set its location in the DeepStream configuration file.  
 Or you can use the **pose_estimation.onnx** in this repository.
-5. Compile the program
+4. Compile the program
  ```
   $ cd deepstream-pose-estimation/
   $ make
