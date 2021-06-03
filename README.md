@@ -30,7 +30,7 @@ You will need
 
 ### Using Docker (Jetson Only)
 
-**Set the default docker runtime**
+1. **Set the default docker runtime**
 Add "default-runtime": "nvidia" to your /etc/docker/daemon.json configuration file to run the process of the ONNX to TensorRT model conversion in the image build.
 ~~~
 {
@@ -46,7 +46,7 @@ Add "default-runtime": "nvidia" to your /etc/docker/daemon.json configuration fi
 ~~~
 Then, reboot your system before proceeding.
 
-**Build the image**
+2. **Build the image**
 ~~~
 git clone https://github.com/MACNICA-CLAVIS-NV/deepstream_pose_estimation
 ~~~
@@ -60,7 +60,7 @@ chmod +x *.sh
 ./docker_build.sh
 ~~~
 
-**Run the application**<br>
+3. **Run the application**<br>
 **You need to have a USB camera at /dev/video0 on your host L4T OS.**
 ~~~
 ./docker_run.sh
