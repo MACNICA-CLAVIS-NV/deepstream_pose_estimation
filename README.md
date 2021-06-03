@@ -30,7 +30,23 @@ You will need
 
 ### Using Docker (Jetson Only)
 
-**Build a container**
+**Set the default docker runtime**
+Add "default-runtime": "nvidia" to your /etc/docker/daemon.json configuration file to run the process of the ONNX to TensorRT model conversion in the image build.
+~~~
+{
+    "runtimes": {
+        "nvidia": {
+            "path": "nvidia-container-runtime",
+            "runtimeArgs": []
+        }
+    },
+
+    "default-runtime": "nvidia"
+}
+~~~
+Then, reboot your system before proceeding.
+
+**Build the image**
 ~~~
 git clone https://github.com/MACNICA-CLAVIS-NV/deepstream_pose_estimation
 ~~~
