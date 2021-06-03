@@ -30,47 +30,47 @@ You will need
 
 ### Using Docker (Jetson Only)
 
-1. **Set the default docker runtime**
-Add "default-runtime": "nvidia" to your /etc/docker/daemon.json configuration file to run the process of the ONNX to TensorRT model conversion in the image build.
-~~~
-{
-    "runtimes": {
-        "nvidia": {
-            "path": "nvidia-container-runtime",
-            "runtimeArgs": []
-        }
-    },
+1. **Set the default docker runtime** <br>
+  Add "default-runtime": "nvidia" to your /etc/docker/daemon.json configuration file to run the process of the ONNX to TensorRT model conversion in the image build.
+  ~~~
+  {
+      "runtimes": {
+          "nvidia": {
+              "path": "nvidia-container-runtime",
+              "runtimeArgs": []
+          }
+      },
 
-    "default-runtime": "nvidia"
-}
-~~~
-Then, reboot your system before proceeding.
+      "default-runtime": "nvidia"
+  }
+  ~~~
+  Then, reboot your system before proceeding.
 
 2. **Build the image**
-~~~
-git clone https://github.com/MACNICA-CLAVIS-NV/deepstream_pose_estimation
-~~~
-~~~
-cd deepstream_pose_estimation
-~~~
-~~~
-chmod +x *.sh
-~~~
-~~~
-./docker_build.sh
-~~~
+  ~~~
+  git clone https://github.com/MACNICA-CLAVIS-NV/deepstream_pose_estimation
+  ~~~
+  ~~~
+  cd deepstream_pose_estimation
+  ~~~
+  ~~~
+  chmod +x *.sh
+  ~~~
+  ~~~
+  ./docker_build.sh
+  ~~~
 
 3. **Run the application**<br>
-**You need to have a USB camera at /dev/video0 on your host L4T OS.**
-~~~
-./docker_run.sh
-~~~
+  **You need to have a USB camera at /dev/video0 on your host L4T OS.**
+  ~~~
+  ./docker_run.sh
+  ~~~
 
-**Note: This release supports only for JetPack 4.5.1.**  
-If you want to run this on other versions of JetPack, modify the following line in Dockerfile to select the base image which support your version. Refer to [the DeepStream-l4t repository page in NVIDIA NGC](https://ngc.nvidia.com/catalog/containers/nvidia:deepstream-l4t/tags) to find the right base image.
-~~~
-ARG BASE_IMAGE=nvcr.io/nvidia/deepstream-l4t:5.1-21.02-samples
-~~~
+  **Note: This release supports only for JetPack 4.5.1.**  
+  If you want to run this on other versions of JetPack, modify the following line in Dockerfile to select the base image which support your version. Refer to [the DeepStream-l4t repository page in NVIDIA NGC](https://ngc.nvidia.com/catalog/containers/nvidia:deepstream-l4t/tags) to find the right base image.
+  ~~~
+  ARG BASE_IMAGE=nvcr.io/nvidia/deepstream-l4t:5.1-21.02-samples
+  ~~~
 
 ### Normal Install
 To get started, please follow these steps.
